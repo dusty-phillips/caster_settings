@@ -1,0 +1,10 @@
+squat -> bend
+spark -> poke
+ticky -> dunk
+chicky -> applet
+chocky -> chocolate
+deckle -> cota
+lease -> leap
+tango -> Thomas
+<<<NOT_SPECS>>>
+comma -> hang
