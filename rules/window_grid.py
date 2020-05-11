@@ -31,10 +31,10 @@ class WindowGrid(MappingRule):
         "window (bottom|lower) left": R(Key("wa-m")),
         "window (bottom|lower) right": R(Key("wa-v")),
         
-        "window (top|upper)": R(Key("wa-c")),
-        "window (bottom|lower)": R(Key("wa-w")),
-        "window left": R(Key("wa-h")),
-        "window right": R(Key("wa-n")),
+        "window (top|upper) [half]": R(Key("wa-c")),
+        "window (bottom|lower) [half]": R(Key("wa-w")),
+        "window left [half]": R(Key("wa-h")),
+        "window right [half]": R(Key("wa-n")),
 
         "window (top|upper) left third": R(Key("cwa-g")),
         "window (top|upper) right third": R(Key("cwa-r")),

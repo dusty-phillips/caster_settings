@@ -6,5 +6,6 @@ chocky -> chocolate
 deckle -> cota
 lease -> leap
 tango -> Thomas
+"address bar" -> "address bar|manpower"
 <<<NOT_SPECS>>>
 comma -> hang
