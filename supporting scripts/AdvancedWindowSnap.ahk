@@ -29,6 +29,7 @@
 
 SnapActiveWindow(winPlaceVertical, winPlaceHorizontal, winSizeHeight, activeMon := 0) {
     WinGet activeWin, ID, A
+	WinGetActiveTitle, WindowTitle
 	SysGet, MonitorCount, MonitorCount
 	
     if (!activeMon) {
@@ -61,7 +62,7 @@ SnapActiveWindow(winPlaceVertical, winPlaceHorizontal, winSizeHeight, activeMon 
     if (winPlaceVertical == "bottom") {
         posY := MonitorWorkAreaBottom - height
     } else if (winPlaceVertical == "middle") {
-        posY := MonitorWorkAreaTop + height
+        posY := MonitorWorkAreaTop + ((MonitorWorkAreaBottom - MonitorWorkAreaTop - height) / 2)
     } else {
         posY := MonitorWorkAreaTop
     }
@@ -72,18 +73,18 @@ SnapActiveWindow(winPlaceVertical, winPlaceHorizontal, winSizeHeight, activeMon 
 	width := floor(width)
 	height := floor(height)
 	
-	/*
-	; Borders (Windows 10)
-	SysGet, BorderX, 32
-	SysGet, BorderY, 33
-	if (BorderX) {
-		posX := posX - BorderX
-		width := width + (BorderX * 2)
+	if not InStr(WindowTitle, "Visual Studio Code") {
+		; Borders (Windows 10)
+		SysGet, BorderX, 32
+		SysGet, BorderY, 33
+		if (BorderX) {
+			posX := posX - BorderX
+			width := width + (BorderX * 2)
+		}
+		if (BorderY) {
+			height := height + BorderY
+		}
 	}
-	if (BorderY) {
-		height := height + BorderY
-	}
-	*/
 	
 	; If window is already there move to same spot on next monitor
 	WinGetPos, curPosX, curPosY, curWidth, curHeight, A
@@ -274,6 +275,7 @@ SecondInput(letter1) {
 #!v::SnapActiveWindow("bottom","right","half")
 #!h::SnapActiveWindow("top","left","full")
 #!n::SnapActiveWindow("top","right","full")
+#!t::SnapActiveWindow("middle","full","half")
 
 ; Numberpad Hotkeys (Portrait)
 ^#!c::SnapActiveWindow("top","full","third")
