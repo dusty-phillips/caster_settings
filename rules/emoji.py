@@ -17,6 +17,8 @@ words = {
     "grin": "😀",
     "joy": "😂",
     "ruffle": "🤣",
+    "tongue": "😛",
+    "angel": "😇",
     "sad": "😟",
     "sob": "😭",
     "cry": "😢",
@@ -26,17 +28,16 @@ words = {
     "snowman": "⛄",
 }
 
-
-def paste_it(word):
-    print(word)
-    paste_string_without_altering_clipboard(words[word])
+def paste_it(the_icon):
+    print(the_icon)
+    paste_string_without_altering_clipboard(words[the_icon])
 
 
 class Emoji(MergeRule):
     pronunciation = "emoji"
-    mapping = {"<word> icon": R(Function(paste_it)), "emoji keyboard": R(Key("w-."))}
+    mapping = {"<the_icon> emoji": R(Function(paste_it)), "emoji keyboard": R(Key("w-."))}
 
-    extras = [Choice("word", {k: k for k in words})]
+    extras = [Choice("the_icon", {k: k for k in words})]
 
 
 def get_rule():

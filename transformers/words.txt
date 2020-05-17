@@ -6,6 +6,6 @@ chocky -> chocolate
 deckle -> cota
 lease -> leap
 tango -> Thomas
-"address bar" -> "address bar|manpower"
+splat -> (splat|spot)
 <<<NOT_SPECS>>>
 comma -> hang

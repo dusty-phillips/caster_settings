@@ -1,1 +1,1 @@
-{"10": "when"}
+{"10": "when", "100": "from castervoice.lib.ctrl.mgr.rule_details import RuleDetails\r\n", "9": "\r\nFunction running in a thread to tell the subprocess module to\r\nshow the window with the appropriate choices.\r\nThen wait for the window to inform us which choice the user selected,\r\nand replace the current selection with whatever they chose.\r\nThread ends if the user doesn't make a choice within a set number of seconds.\r\n\"\"\""}
